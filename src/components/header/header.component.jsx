@@ -19,10 +19,15 @@ const Header = ({ currentUser }) => (
         CONTACT
       </Link>
       {currentUser ? (
-        <div className="option"
-          onClick={() => firebase.auth().signOut()}>
-          SIGNOUT
-        </div>
+        <React.Fragment>
+          <div
+            className="option userOption"
+            onClick={() => firebase.auth().signOut()}
+          >
+            SIGNOUT
+          </div>
+          <div className="userOptionView">{currentUser.displayName}</div>
+        </React.Fragment>
       ) : (
         <Link className="option" to="/signin">
           SIGN IN
