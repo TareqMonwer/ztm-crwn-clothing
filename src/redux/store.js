@@ -9,7 +9,4 @@ const store = createStore(
     rootReducer, applyMiddleware(...middlewares)
 );
 
-console.log(rootReducer, 'root reducer');
-
-
 export default store;
